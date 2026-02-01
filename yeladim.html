@@ -1,15 +1,3 @@
-הנה הקוד המלא.
-
-**מה עליך לעשות:**
-
-1. שמור את הקוד הזה כקובץ `index.html`.
-2. קח את התמונה שאתה רוצה לשים ברקע.
-3. שנה את שם התמונה ל-`background.jpg`.
-4. שים את התמונה ואת קובץ ה-HTML **באותה התיקייה בדיוק**.
-
-הנה הקוד המוכן:
-
-```html
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -21,135 +9,119 @@
 !function (w, d, t) {
   w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];
   ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"];
-  ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
+  ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};  
   for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
   ttq.load('D5MGISJC77U4MKNK4SOG');
   ttq.page();
 }(window, document, 'ttq');
 </script>
+
 <style>
-  /* איפוס הגדרות בסיסי */
-  html, body {
-    margin: 0; padding: 0; height: 100%;
-    font-family: Arial, sans-serif;
-  }
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
 
-  /* הגדרת תמונת הרקע - הקובץ צריך להיות באותה תיקייה */
-  body {
-    background: url('"photo_2026-02-01_17-53-16.jpg"') no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    position: relative; /* למנוע גלילה מיותרת אם יש */
-  }
+body {
+  background-image: url(photo_2026-02-01_17-53-16.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
 
-  /* שכבת הכהיה (אופציונלי - עוזר לקרוא את הטקסט אם התמונה בהירה) */
-  body::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.3); /* כהות עדינה */
-    z-index: 0;
-  }
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 0;
+}
 
-  /* הקונטיינר הראשי */
-  .container {
-    position: relative; /* כדי להיות מעל שכבת ההכהיה */
-    z-index: 1;
-    width: 100%;
-    max-width: 420px; /* רוחב של מובייל */
-    height: 100vh;
-    padding: 26px 20px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* מפזר את האלמנטים למעלה, אמצע ולמטה */
-    color: #fff;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.65);
-  }
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  height: 100vh;
+  padding: 26px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.65);
+}
 
-  /* כותרות */
-  h1 {
-    margin: 0;
-    font-size: 28px;
-    text-align: center;
-    line-height: 1.3;
-  }
+h1 {
+  margin: 0;
+  font-size: 28px;
+  text-align: center;
+  line-height: 1.3;
+}
 
-  .subtitle {
-    text-align: center;
-    font-size: 16px;
-    margin-top: 10px;
-    line-height: 1.4;
-  }
+.subtitle {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 10px;
+  line-height: 1.4;
+}
 
-  /* החלק האמצעי - מונה וכפתור */
-  .mid-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
+.mid-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  /* המונה הסגול */
-  .counter {
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    color: #d900ff; /* סגול בולט */
-    text-shadow: 
-      -1px -1px 0 #000,  
-       1px -1px 0 #000,
-      -1px  1px 0 #000,
-       1px  1px 0 #000,
-       0 0 10px rgba(0,0,0,0.8); /* מסגרת שחורה והצללה לקריאות */
-    margin-bottom: 15px; /* רווח מהכפתור */
-  }
+.counter {
+  font-size: 18px;
+  font-weight: bold;
+  color: #d900ff;
+  margin-bottom: 15px;
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000,
+     0 0 10px rgba(0,0,0,0.8);
+}
 
-  /* כפתור ההצטרפות */
-  .cta {
-    background: #25D366; /* ירוק וואטסאפ */
-    color: #fff;
-    text-decoration: none;
-    text-align: center;
-    font-size: 22px;
-    font-weight: bold;
-    padding: 18px 0;
-    width: 100%;
-    border-radius: 50px; /* כפתור עגול יותר */
-    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
-    transition: transform 0.2s;
-    display: block;
-  }
+.cta {
+  background: #25D366;
+  color: #fff;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 18px 0;
+  width: 100%;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
 
-  .cta:active {
-    transform: scale(0.98);
-  }
+.carousel {
+  background: rgba(0,0,0,0.6);
+  border-radius: 16px;
+  padding: 15px;
+  text-align: center;
+  font-size: 15px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.4s ease-in-out;
+}
 
-  /* קרוסלת התגובות */
-  .carousel-wrapper {
-    margin-bottom: 10px;
-  }
-
-  .carousel {
-    background: rgba(0, 0, 0, 0.6); /* רקע כהה חצי שקוף */
-    border-radius: 16px;
-    padding: 15px;
-    text-align: center;
-    font-size: 15px;
-    min-height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(4px); /* אפקט טשטוש יפה */
-    border: 1px solid rgba(255,255,255,0.2);
-  }
-
-  .footer-note {
-    text-align: center;
-    font-size: 12px;
-    opacity: 0.8;
-    margin-top: 8px;
-  }
+.footer-note {
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.8;
+  margin-top: 8px;
+}
 </style>
 </head>
 
@@ -157,7 +129,7 @@
 
 <div class="container">
 
-  <div class="top-section">
+  <div>
     <h1>קבוצת הדילים הכי שווה להורים 👶🍼</h1>
     <div class="subtitle">
       מוצרים לתינוקות וילדים במחירים מיוחדים<br>
@@ -166,76 +138,56 @@
   </div>
 
   <div class="mid-section">
-    <div class="counter" id="counter">15,000+ הורים כבר חוסכים</div>
-
+    <div class="counter" id="counter"></div>
     <a class="cta" href="https://chat.whatsapp.com/Ba87KfPN6CgCcXp0jx30gb" target="_blank">
       להצטרפות לקבוצת הווצאפ
     </a>
   </div>
 
-  <div class="bottom-section">
-    <div class="carousel-wrapper">
-      <div class="carousel" id="carousel">
-        הקבוצה הכי שווה שאני נמצאת בה 🤍
-      </div>
-    </div>
-
-    <div class="footer-note">
-      הצטרפות חינמית • יציאה בכל רגע
-    </div>
+  <div>
+    <div class="carousel" id="carousel"></div>
+    <div class="footer-note">הצטרפות חינמית • יציאה בכל רגע</div>
   </div>
 
 </div>
 
 <script>
-// לוגיקה של המונה (נשמר בדפדפן כדי שיראה אמין)
 let base = 15000;
 let visits = localStorage.getItem("visitCount");
 
 if (!visits) {
   visits = base + Math.floor(Math.random() * 5) + 1;
-  localStorage.setItem("visitCount", visits);
 } else {
   visits = parseInt(visits) + 1;
-  localStorage.setItem("visitCount", visits);
 }
+localStorage.setItem("visitCount", visits);
 
 document.getElementById("counter").innerText =
   visits.toLocaleString() + "+ הורים כבר חוסכים";
 
-// לוגיקה של הקרוסלה (המלצות מתחלפות)
 const reviews = [
   "הקבוצה הכי שווה שאני נמצאת בה 🤍",
   "בזכותכם אני חוסכת מלא כסף",
   "כל פעם דילים מטורפים",
   "לא מאמינה כמה חסכתי",
   "קונה רק מפה",
-  "חברה המליצה – התמכרתי",
   "שווה כל שנייה",
-  "מוצרים מעולים בזול",
-  "הווצאפ היחיד שלא על שקט",
   "פשוט זהב 🔥"
 ];
 
 let i = 0;
+const carousel = document.getElementById("carousel");
+carousel.innerText = reviews[0];
+
 setInterval(() => {
-  i = (i + 1) % reviews.length;
-  const carousel = document.getElementById("carousel");
-  
-  // אפקט עמעום קטן בהחלפה
   carousel.style.opacity = 0;
   setTimeout(() => {
+    i = (i + 1) % reviews.length;
     carousel.innerText = reviews[i];
     carousel.style.opacity = 1;
-  }, 400); // מחכה שהטקסט יעלם לפני שמחליף
-  
+  }, 400);
 }, 3000);
-
-// הוספת CSS לאנימציה דרך JS (כדי שהקוד ישאר בקובץ אחד)
-document.getElementById("carousel").style.transition = "opacity 0.4s ease-in-out";
 </script>
 
 </body>
 </html>
-
-```
