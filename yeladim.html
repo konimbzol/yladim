@@ -3,18 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>קבוצת הוואטסאפ הכי שווה להורים</title>
-
-<script>
-!function (w, d, t) {
-  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];
-  ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"];
-  ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};  
-  for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
-  ttq.load('D5MGISJC77U4MKNK4SOG');
-  ttq.page();
-}(window, document, 'ttq');
-</script>
+<title>קבוצת הדילים הכי שווה להורים</title>
 
 <style>
 html, body {
@@ -25,7 +14,7 @@ html, body {
 }
 
 body {
-  background-image: url(photo_2026-02-01_17-53-16.jpg);
+  background-image: url("photo_2026-02-01_17-53-16.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -38,7 +27,7 @@ body::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.35);
   z-index: 0;
 }
 
@@ -71,17 +60,15 @@ h1 {
   line-height: 1.4;
 }
 
-.mid-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.mid {
+  text-align: center;
 }
 
 .counter {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   color: #d900ff;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
   text-shadow:
     -1px -1px 0 #000,
      1px -1px 0 #000,
@@ -91,32 +78,30 @@ h1 {
 }
 
 .cta {
+  display: block;
   background: #25D366;
   color: #fff;
   text-decoration: none;
   font-size: 22px;
   font-weight: bold;
   padding: 18px 0;
-  width: 100%;
   border-radius: 50px;
-  text-align: center;
   box-shadow: 0 6px 20px rgba(0,0,0,0.5);
 }
 
 .carousel {
   background: rgba(0,0,0,0.6);
   border-radius: 16px;
-  padding: 15px;
-  text-align: center;
+  padding: 14px;
   font-size: 15px;
-  min-height: 50px;
+  min-height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: opacity 0.4s ease-in-out;
 }
 
-.footer-note {
+.footer {
   text-align: center;
   font-size: 12px;
   opacity: 0.8;
@@ -133,45 +118,41 @@ h1 {
     <h1>קבוצת הדילים הכי שווה להורים 👶🍼</h1>
     <div class="subtitle">
       מוצרים לתינוקות וילדים במחירים מיוחדים<br>
-      הכל מגיע ישר לווצאפ
+      הכל מגיע ישר לוואטסאפ
     </div>
   </div>
 
-  <div class="mid-section">
+  <div class="mid">
     <div class="counter" id="counter"></div>
     <a class="cta" href="https://chat.whatsapp.com/Ba87KfPN6CgCcXp0jx30gb" target="_blank">
-      להצטרפות לקבוצת הווצאפ
+      להצטרפות לקבוצת הוואטסאפ
     </a>
   </div>
 
   <div>
     <div class="carousel" id="carousel"></div>
-    <div class="footer-note">הצטרפות חינמית • יציאה בכל רגע</div>
+    <div class="footer">הצטרפות חינמית • יציאה בכל רגע</div>
   </div>
 
 </div>
 
 <script>
+// מונה מצטרפים
 let base = 15000;
 let visits = localStorage.getItem("visitCount");
-
-if (!visits) {
-  visits = base + Math.floor(Math.random() * 5) + 1;
-} else {
-  visits = parseInt(visits) + 1;
-}
+visits = visits ? parseInt(visits) + 1 : base + Math.floor(Math.random() * 10);
 localStorage.setItem("visitCount", visits);
 
 document.getElementById("counter").innerText =
   visits.toLocaleString() + "+ הורים כבר חוסכים";
 
+// קרוסלה
 const reviews = [
   "הקבוצה הכי שווה שאני נמצאת בה 🤍",
   "בזכותכם אני חוסכת מלא כסף",
   "כל פעם דילים מטורפים",
   "לא מאמינה כמה חסכתי",
   "קונה רק מפה",
-  "שווה כל שנייה",
   "פשוט זהב 🔥"
 ];
 
